@@ -10,6 +10,25 @@ class SpeechRecognitionApi {
             var transcript = event.results[resultIndex][0].transcript;
             this.output.textContent = transcript;
             console.log(this.output)
-        };
+        }
+    }
+    init() {
+        this.speechApi.start();
+    }
+    stop() {
+        this.speechApi.stop();
     }
 }
+
+window.onload = function() {
+    var speech = new SpeechRecognitionApi({
+        output: document.querySelector(".output")
+    })
+    document.querySelector(".btn-start").addEventListener("click", () => {
+        speech.init();
+    })
+    document.querySelector(".btn-end").addEventListener("click", () => {
+        speech.stop();
+    })
+}
+
