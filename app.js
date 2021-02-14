@@ -32,3 +32,5 @@ window.onload = function() {
     })
 }
 
+//https://www.youtube.com/watch?v=VSoBO89uBFk
+//torok technology
